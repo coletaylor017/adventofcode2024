@@ -1,4 +1,4 @@
-package day1;
+package day1oops2023;
 
 import java.io.BufferedReader;
 import java.io.File;
