@@ -1,4 +1,4 @@
-package day.two;
+package day2;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class DayTwoPartOne {
     public static void main(String[] args) throws FileNotFoundException {
         int safeReports = 0;
-        try (Scanner scanner = new Scanner(new BufferedReader(new FileReader("src/day/two/input")))) {
+        try (Scanner scanner = new Scanner(new BufferedReader(new FileReader("src/day2/input")))) {
             while (scanner.hasNextLine()) {
                 String[] line = scanner.nextLine().split(" ");
                 int[] numbers = new int[line.length];

@@ -1,10 +1,9 @@
-package day.one;
+package day1;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,7 +16,7 @@ public class DayOnePartTwo {
         List<Integer> list2 = new ArrayList<>();
         Map<Integer, Integer> list2Counts = new HashMap<>();
 
-        try (Scanner scanner = new Scanner(new BufferedReader(new FileReader("src/day/one/input")))) {
+        try (Scanner scanner = new Scanner(new BufferedReader(new FileReader("src/day1/input")))) {
             while (scanner.hasNextInt()) {
                 list1.add(scanner.nextInt());
                 int list2Number = scanner.nextInt();

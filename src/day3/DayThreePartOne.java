@@ -1,4 +1,4 @@
-package day.three;
+package day3;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 public class DayThreePartOne {
     public static void main(String[] args) throws IOException {
         int answer = 0;
-        File inputFile = new File("src/day/three/input");
+        File inputFile = new File("src/day3/input");
         String input = Files.readString(inputFile.toPath(), Charset.defaultCharset());
         Pattern pattern = Pattern.compile("mul\\((\\d{1,3}),(\\d{1,3})\\)");
         Matcher matcher = pattern.matcher(input);

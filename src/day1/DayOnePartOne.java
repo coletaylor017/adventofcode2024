@@ -1,4 +1,4 @@
-package day.one;
+package day1;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -13,7 +13,7 @@ public class DayOnePartOne {
     public static void main(String[] args) throws FileNotFoundException {
         List<Integer> list1 = new ArrayList<>();
         List<Integer> list2 = new ArrayList<>();
-        try (Scanner scanner = new Scanner(new BufferedReader(new FileReader("src/day/one/input")))) {
+        try (Scanner scanner = new Scanner(new BufferedReader(new FileReader("src/day1/input")))) {
             while (scanner.hasNextInt()) {
                 list1.add(scanner.nextInt());
                 list2.add(scanner.nextInt());
