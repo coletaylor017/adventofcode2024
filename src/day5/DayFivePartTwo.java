@@ -50,10 +50,35 @@ public class DayFivePartTwo {
             for (int j = i + 1; j < updatePages.length; j++) {
                 int page2 = Integer.parseInt(updatePages[j]);
                 if (rules.containsKey(page1) && !rules.get(page1).contains(page2)) {
-                    return 0;
+                    return makeValidAndGetMiddle(update, rules);
                 }
             }
         }
-        return Integer.parseInt(updatePages[updatePages.length / 2]);
+        return 0;
+    }
+
+    private static int makeValidAndGetMiddle(String update, Map<Integer, Set<Integer>> rules) {
+        String[] updatePages = update.split(",");
+        int[] pages = new int[updatePages.length];
+        for (int i = 0; i < updatePages.length; i++) {
+            pages[i] = Integer.parseInt(updatePages[i]);
+        }
+
+        // we will fill this array with the pages as we go
+        // you can determine the correct index for a given page based on how many rules it has about the pages that follow it
+        // (since it is guaranteed there is a rule for every possible number combo)
+        int[] validPages = new int[updatePages.length];
+        for (int i = 0; i < pages.length; i++) {
+            // "children" is all the pages that must come after
+            Set<Integer> children = rules.getOrDefault(pages[i], new HashSet<>());
+            int numRulesAboutChildren = 0;
+            for (int j = 0; j < pages.length; j++) {
+                if (i == j) continue;
+                if (children.contains(pages[j])) numRulesAboutChildren++;
+            }
+            validPages[validPages.length - numRulesAboutChildren - 1] = pages[i];
+        }
+
+        return validPages[validPages.length / 2];
     }
 }
